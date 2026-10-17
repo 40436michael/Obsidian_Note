@@ -1,3 +1,13 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .trash/
+
+# 系統產生的檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian 快取／暫存
+.obsidian/cache
+.obsidian/plugins/*/cache/
+*.tmp
