@@ -1,0 +1,64 @@
+filters:
+  and:
+    - note.type == "book"
+properties:
+  file.name:
+    displayName: 書名
+  note.author:
+    displayName: 作者
+  note.category:
+    displayName: 類別
+  note.status:
+    displayName: 狀態
+  note.rating:
+    displayName: 評分
+  note.started:
+    displayName: 開始
+  note.finished:
+    displayName: 讀完
+views:
+  - type: table
+    name: 全部
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - author
+      - category
+      - status
+      - rating
+      - started
+      - finished
+    sort:
+      - property: status
+        direction: DESC
+  - type: table
+    name: 閱讀中
+    filters:
+      and:
+        - note.status == "閱讀中"
+    order:
+      - file.name
+      - author
+      - category
+      - started
+  - type: table
+    name: 想讀
+    filters:
+      and:
+        - note.status == "想讀"
+    order:
+      - file.name
+      - author
+      - category
+  - type: table
+    name: 依類別
+    groupBy:
+      property: category
+      direction: ASC
+    order:
+      - file.name
+      - author
+      - status
+      - rating
