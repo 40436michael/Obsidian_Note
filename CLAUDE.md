@@ -210,7 +210,7 @@ updated: YYYY-MM-DD
 - 更新：[[Clean Code 摘要]]、[[函式只做一件事]]
 - 新增：[[Robert C. Martin]]
 ```
-動作類型：`setup`、`ingest`、`query`、`lint`、`new`、`code-wiki`、`code-wiki-update`、`issue`。
+動作類型：`setup`、`ingest`、`update`（修正既有 wiki 頁）、`query`、`lint`、`new`、`code-wiki`、`code-wiki-update`、`issue`。
 
 ## 書籍類別（category）
 
