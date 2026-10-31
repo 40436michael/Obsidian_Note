@@ -24,3 +24,6 @@ type: log
 
 ## [2026-10-18] update | Clean Code 改為第二版
 - 更新：[[Clean Code 摘要]] 書籍資訊與章節表改為第二版（37 章、四部分、附錄辯論）；[[Robert C. Martin]] 著作表
+
+## [2026-11-01] new | Coding Interview Patterns
+- 新增：[[Coding Interview Patterns]] 書籍資訊卡（狀態：想讀）
