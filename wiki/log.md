@@ -27,3 +27,7 @@ type: log
 
 ## [2026-11-01] new | Coding Interview Patterns
 - 新增：[[Coding Interview Patterns]] 書籍資訊卡（狀態：想讀）
+
+## [2026-11-01] ingest | Clean Code 02 清理你的程式碼
+- 新增：[[先讓它能動再讓它正確]]
+- 更新：[[Clean Code 摘要]]、[[童子軍規則]]、[[index]]
