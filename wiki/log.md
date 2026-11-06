@@ -31,3 +31,13 @@ type: log
 ## [2026-11-01] ingest | Clean Code 02 清理你的程式碼
 - 新增：[[先讓它能動再讓它正確]]
 - 更新：[[Clean Code 摘要]]、[[童子軍規則]]、[[index]]
+
+## [2026-11-06] setup | 章節與書籍模板改版
+- 更新：`Templates/章節模板.md` 加入各段提示、引文頁碼、`pages` 屬性、「書中提到的資源」，必填段落排前面，`chapter` 加引號
+- 更新：`Templates/書籍模板.md` 新增 `pages`、「最值得記住的一句話」；[[使用指南]] 同步
+
+## [2026-11-06] update | 章節模板精簡
+- 更新：`Templates/章節模板.md` 移除 `pages` 屬性與「書中提到的資源」段落；[[使用指南]] 同步
+
+## [2026-11-06] new | System Design Interview
+- 新增：[[System Design Interview]] 書籍資訊卡（狀態：想讀）
