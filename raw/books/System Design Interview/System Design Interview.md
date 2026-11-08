@@ -8,9 +8,9 @@ publisher: 碁峰資訊
 pages: 320
 category: 程式設計與技術
 status: 想讀
-rating: 
-started: 
-finished: 
+rating:
+started: 2026-11-08
+finished:
 ---
 # System Design Interview
 
