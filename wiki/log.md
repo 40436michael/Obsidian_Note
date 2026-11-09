@@ -41,3 +41,10 @@ type: log
 
 ## [2026-11-06] new | System Design Interview
 - 新增：[[System Design Interview]] 書籍資訊卡（狀態：想讀）
+
+## [2026-11-10] setup | 通用章節模板與學習機制
+- 更新：`Templates/章節模板.md` 改為通用模板：核心段落＋6 種章節類型（原則／觀念、案例、教科書／理論、實作／教學、敘事、其他），新增 `chapter_type`
+- 更新：`Templates/書籍模板.md` 新增「讀完想產出什麼」、評分說明、精讀／略讀提示
+- 更新：`CLAUDE.md` 新增概念頁格式（以使用者原話為主）、寫作規則 8–11、ingest 挑戰問題、`複習`／`挑戰`／`回顧` 指令、章節類型表；lint 孤立頁面改為提醒
+- 更新：[[使用指南]]（15 分鐘看結構、精讀／略讀、範例筆記、評分量表）、[[README]]
+- 參考：《如何閱讀一本書》、vaultorial/obsidian-templates、閱讀前哨站
