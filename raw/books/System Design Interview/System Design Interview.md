@@ -9,7 +9,7 @@ pages: 320
 category: 程式設計與技術
 status: 想讀
 rating:
-started: 2026-11-08
+started: 2026-11-09
 finished:
 ---
 # System Design Interview
