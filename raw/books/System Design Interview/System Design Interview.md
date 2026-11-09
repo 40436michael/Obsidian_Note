@@ -7,7 +7,7 @@ translator: 藍子軒
 publisher: 碁峰資訊
 pages: 320
 category: 程式設計與技術
-status: 想讀
+status: 閱讀中
 rating:
 started: 2026-11-09
 finished:
