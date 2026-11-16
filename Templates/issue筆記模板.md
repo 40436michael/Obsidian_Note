@@ -1,14 +1,29 @@
 <%*
-const project = tp.file.folder();
-const id = await tp.system.prompt("issue 編號（Jira 例：KAFKA-21500；GitHub 例：issue-123）");
-const url = await tp.system.prompt("issue 網址");
-await tp.file.rename(`${project} ${id}`);
+// 專案：在 raw/projects/<專案>/ 裡建立就自動帶入，否則從現有專案選
+const projectFolders = (app.vault.getAbstractFileByPath("raw/projects")?.children ?? [])
+  .filter(f => f.children).map(f => f.name);
+let project = tp.file.folder(true).match(/^raw\/projects\/([^/]+)$/)?.[1];
+if (!project) {
+  if (projectFolders.length === 0) {
+    new tp.obsidian.Notice("還沒有任何專案，請先用「專案模板」建立專案資訊卡");
+    throw new Error("no project");
+  }
+  project = await tp.system.suggester(projectFolders, projectFolders, true, "這個 issue 屬於哪個專案？");
+}
+
+// 編號：從網址自動判斷，判斷不出來才問
+const url = ((await tp.system.prompt("issue 或 PR 網址（Jira、GitHub 都可以）")) ?? "").trim();
+let id = url.match(/\/browse\/([A-Z][A-Z0-9]*-\d+)/)?.[1];          // Jira：KAFKA-21500
+const gh = url.match(/github\.com\/[^/]+\/[^/]+\/(issues|pull)\/(\d+)/);
+if (!id && gh) id = `${gh[1] === "pull" ? "pr" : "issue"}-${gh[2]}`;  // GitHub：issue-123、pr-24252
+if (!id) id = await tp.system.prompt("編號（例：KAFKA-21500、issue-123、pr-24252）", "", true);
+await tp.file.move(`raw/projects/${project}/${project} ${id}`);
 -%>
 ---
 type: issue-note
 project: "[[<% project %>]]"
 issue: <% url %>
-pr:            # 送出 PR 後填網址
+pr: <% gh?.[1] === "pull" ? url : "" %>
 status: 進行中  # 進行中、等待 review、已合併、放棄
 started: <% tp.date.now("YYYY-MM-DD") %>
 finished:
@@ -28,7 +43,7 @@ finished:
 - [ ] 
 
 ## 過程記錄
-<!-- 邊做邊寫，不要等做完才回想。每天一個日期標題，記下查了什麼、試了什麼、卡在哪。
+<!-- 邊做邊寫，不要等做完才回想。每天一個日期標題（Alt+E 選「今天的記錄」會自動插入），記下查了什麼、試了什麼、卡在哪。
      附證據：檔案路徑、commit、PR、KIP 的連結或指令。
      走錯的路也留著，加上「後來發現…」，那是最好的學習材料 -->
 ### <% tp.date.now("YYYY-MM-DD") %>

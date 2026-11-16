@@ -21,6 +21,7 @@ wiki/                 Claude 維護的 wiki（我只看不寫）
   syntheses/          從提問得到的比較與分析
 Templates/            Templater 模板
 書單.base              書單總表
+開源貢獻.base          issue 筆記進度表
 CLAUDE.md             給 Claude 的規則（結構、格式、操作流程）
 ```
 
@@ -44,7 +45,8 @@ CLAUDE.md             給 Claude 的規則（結構、格式、操作流程）
 | 深入某個主題 | `寫 <頁面名稱>` | 補寫該主題頁和需要的子頁 |
 | 專案有更新 | `code-wiki update <專案>` | 比對 commit，只更新受影響的頁面 |
 | 處理一個 issue | `issue <issue 網址>` | 找出相關程式碼、提出修法和取捨；**修改由我自己寫**，Claude 負責 review |
-| 記錄 issue 學到的事 | 在 `raw/projects/<專案>/` 新增筆記，套用「issue筆記模板」，寫完說 `ingest <專案> <issue 編號>` | 例：`kafka KAFKA-21500`。筆記我自己寫，Claude 整理進 wiki |
+| 記錄 issue 學到的事 | 在 `raw/projects/<專案>/` 新增筆記，套用「issue筆記模板」，貼上網址會自動判斷編號；寫完說 `ingest <專案> <issue 編號>` | 例：`kafka KAFKA-21500`。筆記我自己寫，Claude 整理進 wiki |
+| 看所有 issue 的進度 | 打開 `開源貢獻.base` | 「進行中」和「全部（依專案分組）」兩個檢視 |
 
 原始碼預設在線上閱讀；要貢獻而需要 clone 時，Claude 會先徵求同意，並放在 vault 以外的地方。
 

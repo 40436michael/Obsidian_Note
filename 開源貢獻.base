@@ -1,0 +1,46 @@
+filters:
+  and:
+    - note.type == "issue-note"
+properties:
+  file.name:
+    displayName: issue
+  note.project:
+    displayName: 專案
+  note.status:
+    displayName: 狀態
+  note.pr:
+    displayName: PR
+  note.started:
+    displayName: 開始
+  note.finished:
+    displayName: 結束
+views:
+  - type: table
+    name: 進行中
+    filters:
+      and:
+        - note.status != "已合併"
+        - note.status != "放棄"
+    order:
+      - file.name
+      - project
+      - status
+      - pr
+      - started
+    sort:
+      - property: started
+        direction: ASC
+  - type: table
+    name: 全部
+    groupBy:
+      property: project
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - pr
+      - started
+      - finished
+    sort:
+      - property: started
+        direction: DESC

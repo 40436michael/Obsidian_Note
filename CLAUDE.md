@@ -30,6 +30,7 @@ wiki/
   syntheses/      從提問得到、值得保存的比較與分析
 Templates/        Templater 模板（使用者手動建立筆記用）
 書單.base          書單總表（Obsidian Bases）
+開源貢獻.base      所有 issue 筆記的進度表（Obsidian Bases）
 ```
 
 開源專案的原始碼：
@@ -43,7 +44,8 @@ Templates/        Templater 模板（使用者手動建立筆記用）
 
 - Obsidian 以檔名連結，檔名必須全 vault 唯一。
 - 章節筆記前綴書名：`Clean Code 03 函式`；原始碼筆記前綴專案名。
-- issue 筆記用「專案名 + 專案自己的 issue 編號」：Jira 寫 `kafka KAFKA-21500`，GitHub 寫 `claudian issue-123`
+- issue 筆記用「專案名 + 專案自己的 issue 編號」：Jira 寫 `kafka KAFKA-21500`，GitHub 寫 `claudian issue-123`，
+  沒有 issue 的 PR（例：Kafka 的 MINOR）寫 `kafka pr-24252`
   （不用 `#`，`#` 在 Obsidian 連結裡代表標題）。
 - wiki 書籍頁加「摘要」：`Clean Code 摘要`。
 - code wiki 頁前綴專案名與編號：`claudian 11 執行抽象層`（編號規則見「Code Wiki」）。
