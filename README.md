@@ -41,7 +41,7 @@ CLAUDE.md             給 Claude 的規則（結構、格式、操作流程）
 
 | 想做什麼 | 對 Claude 說 | 會發生什麼 |
 |---|---|---|
-| 開始認識一個專案 | `code-wiki <repo 網址>` | 規劃 code wiki 目錄，確認後先寫概覽、快速開始、貢獻指南三頁 |
+| 開始認識一個專案 | `code-wiki <repo 網址>` | 規劃 code wiki 目錄，確認後先寫概覽、快速開始、貢獻指南三頁。已有 Zread／Google Code Wiki 的專案（例：Kafka）不重寫，只寫精簡概覽和貢獻指南 |
 | 深入某個主題 | `寫 <頁面名稱>` | 補寫該主題頁和需要的子頁 |
 | 專案有更新 | `code-wiki update <專案>` | 比對 commit，只更新受影響的頁面 |
 | 處理一個 issue | `issue <issue 網址>` | 找出相關程式碼、提出修法和取捨；**修改由我自己寫**，Claude 負責 review |
