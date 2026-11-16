@@ -19,7 +19,7 @@ raw/
   articles/                           網路文章
   projects/<專案>/<專案>.md            專案資訊卡（type: project）
   projects/<專案>/<專案> NN 主題.md     原始碼閱讀筆記（type: code-note）
-  projects/<專案>/<專案> issue-NNN.md   issue 處理筆記（type: issue-note）
+  projects/<專案>/<專案> <issue 編號>.md issue 處理筆記（type: issue-note，見「命名規則」）
 wiki/
   index.md        所有 wiki 頁面的目錄
   log.md          操作紀錄（只新增，不修改舊紀錄）
@@ -35,13 +35,16 @@ Templates/        Templater 模板（使用者手動建立筆記用）
 開源專案的原始碼：
 - **學習**：預設在線上閱讀（GitHub 網頁、raw.githubusercontent.com、`gh api`）。
 - **貢獻**：需要在本機執行與測試，可以 clone，但**每次 clone 前都要先取得使用者同意**。
-- clone 一律放在 vault 外（例如 `C:\Users\michael\code\<專案>`），絕不把原始碼放進 vault。
+- clone 一律放在 vault 外（Linux 例：`~/<專案>`；Windows 例：`C:\Users\michael\code\<專案>`），絕不把原始碼放進 vault。
+  實際路徑記在專案資訊卡的 `local_path`。兩台電腦路徑不同，依目前作業系統判斷用哪一個。
 - 不執行專案的安裝腳本或 build（如 `npm install` 的 postinstall），除非使用者同意。
 
 ## 命名規則
 
 - Obsidian 以檔名連結，檔名必須全 vault 唯一。
 - 章節筆記前綴書名：`Clean Code 03 函式`；原始碼筆記前綴專案名。
+- issue 筆記用「專案名 + 專案自己的 issue 編號」：Jira 寫 `kafka KAFKA-21500`，GitHub 寫 `claudian issue-123`
+  （不用 `#`，`#` 在 Obsidian 連結裡代表標題）。
 - wiki 書籍頁加「摘要」：`Clean Code 摘要`。
 - code wiki 頁前綴專案名與編號：`claudian 11 執行抽象層`（編號規則見「Code Wiki」）。
 - 概念頁用中文命名，英文原名放在 `aliases`。
@@ -258,7 +261,7 @@ updated: YYYY-MM-DD
 2. 找出相關檔案與呼叫路徑，連到對應 wiki 頁面；缺的頁面依需要補寫。
 3. 提出 2–3 種可能修法與取捨，對照 02 貢獻指南指出要注意的規範與測試。不代寫修改。
 4. 使用者寫完修改後，依專案規範 review：正確性、測試、風格、PR 描述。
-5. 建議使用者寫 `raw/projects/<專案>/<專案> issue-NNN.md`（學到什麼、為什麼這樣修），之後可 ingest。
+5. 建議使用者用「issue筆記模板」寫 `raw/projects/<專案>/<專案> <issue 編號>.md`（學到什麼、為什麼這樣修），之後可 ingest。
 6. 更新 `log.md`。
 
 ### `code-wiki update <專案>`

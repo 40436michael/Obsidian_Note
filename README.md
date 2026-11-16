@@ -44,6 +44,7 @@ CLAUDE.md             給 Claude 的規則（結構、格式、操作流程）
 | 深入某個主題 | `寫 <頁面名稱>` | 補寫該主題頁和需要的子頁 |
 | 專案有更新 | `code-wiki update <專案>` | 比對 commit，只更新受影響的頁面 |
 | 處理一個 issue | `issue <issue 網址>` | 找出相關程式碼、提出修法和取捨；**修改由我自己寫**，Claude 負責 review |
+| 記錄 issue 學到的事 | 在 `raw/projects/<專案>/` 新增筆記，套用「issue筆記模板」，寫完說 `ingest <專案> <issue 編號>` | 例：`kafka KAFKA-21500`。筆記我自己寫，Claude 整理進 wiki |
 
 原始碼預設在線上閱讀；要貢獻而需要 clone 時，Claude 會先徵求同意，並放在 vault 以外的地方。
 
@@ -69,7 +70,11 @@ CLAUDE.md             給 Claude 的規則（結構、格式、操作流程）
 - 快捷鍵：`Templater: Open insert template modal` 綁定 `Alt+E`
 
 **同步**
-Obsidian Git 會在停止編輯 10 分鐘後自動 commit 並推送到 GitHub。`.obsidian/workspace*.json`、`.trash/`、系統暫存檔已列入 `.gitignore`。
+Windows 和 Linux 兩台電腦共用這個 repo：
+- Obsidian Git 開啟時自動 pull、之後每 10 分鐘 pull 一次；停止編輯 10 分鐘後自動 commit 並推送到 GitHub。
+- 換電腦前先手動執行 Commit-and-sync，避免衝突。
+- `.gitattributes` 統一用 LF 換行。
+- `.obsidian/workspace*.json`、`.obsidian/graph.json`、`.trash/`、系統暫存檔已列入 `.gitignore`（各台電腦各自保留）。
 
 **在新電腦上使用**
 1. clone 這個 repo，用 Obsidian 開啟資料夾。
