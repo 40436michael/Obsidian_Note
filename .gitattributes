@@ -1,0 +1,2 @@
+# 兩台電腦（Windows / Linux）的文字檔一律用 LF 換行，避免整個檔案被當成修改
+* text=auto eol=lf
